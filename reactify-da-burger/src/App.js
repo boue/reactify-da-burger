@@ -4,13 +4,23 @@ import Burger from './Burger/Burger';
 
 class App extends Component {
   state = {
-    burgers: [{ name: 'Supreme', ingredients: 5 }]
+    burgers: [
+      { name: 'Supreme', ingredients: 5 }
+    ]
   }
 
-  switchBurgerHandler = () => {
+  switchBurgerHandler = (newName, newIngredients) => {
     this.setState({ 
       burgers: [
-        { name: 'yet to be made ', ingredients: 0}
+        { name: newName, ingredients: newIngredients }
+      ]
+    })
+  }
+
+  resetBurgerHandler = () => {
+    this.setState({ 
+      burgers: [
+        { name: 'yet to be made ', ingredients: 'no ' }
       ]
     })
   }
@@ -19,11 +29,12 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Hi I'm a Burger Making App</h1>
-        <button onClick={this.switchBurgerHandler} >Start Over</button>
-        <Burger 
+        <button onClick={() => this.switchBurgerHandler('Veggie ', '5')} >I'm Vegeterian</button>
+        <Burger
+          click={() => this.resetBurgerHandler()} 
           ingredients={this.state.burgers[0].ingredients}
           name={this.state.burgers[0].name}  
-        />
+        > EW </Burger>
       </div>
     );
   }
