@@ -1,6 +1,6 @@
 .Burger {
   width: 60%;
-  margin: auto;
+  margin: 16px auto;
   border: 3px #eee;
   box-shadow: 0 4px 6px #ccc;
   padding: 16px;
