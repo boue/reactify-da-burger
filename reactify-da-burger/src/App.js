@@ -7,9 +7,9 @@ var GifPlayer = require('react-gif-player');
 class App extends Component {
   state = {
     burgers: [
-      { name: 'Supreme', ingredients: 5, price: 9 },
-      { name: 'Veggie', ingredients: 3, price: 6},
-      { name: 'Meat Lovers', ingredients: 8 , price: 12}
+      { id: '147852369', name: 'Supreme', ingredients: 5, price: 9 },
+      { id: '369258147', name: 'Veggie', ingredients: 3, price: 6},
+      { id: '789456123', name: 'Meat Lovers', ingredients: 8 , price: 12}
     ],
     showPrice: false
   }
@@ -36,7 +36,8 @@ class App extends Component {
             <div>
               <Burger 
               click={() => this.displayPriceHandler(index)}
-              ingredients={burger.ingredients}
+              ingredients={burger.ingredients} 
+              key={burger.id}
               name={burger.name} 
               onClick={this.switchBurgerHandler}
               />
