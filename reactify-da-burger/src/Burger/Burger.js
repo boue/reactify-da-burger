@@ -10,8 +10,8 @@ const burger = (props) => {
         bsSize="large"
         bsStyle="success" 
         className="button"
-        onClick={() => this.switchBurgerHandler('Veggie ', '5')} 
-      >Order {props.name}</Button>
+        onClick={props.click} 
+      >Order {props.name}</Button> 
     </div> 
   );
 }
